@@ -18,6 +18,7 @@ class InteractionCreateAction extends Action {
       id: data.id,
       channel: client.channels.cache.get(data.channel_id),
       guild: guild,
+      token: data.token,
       member: guild ? guild.members.cache.get(data.member.user.id) || (await guild.members.fetch(data.member.user.id)) || null : null,
       author: client.users.cache.get(data.member.user.id) || (await client.users.fetch(data.member.user.id)) || null,
       name: data.data.name,
